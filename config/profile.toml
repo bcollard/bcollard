@@ -1,0 +1,170 @@
+# ---------------------------------------------------------------------------
+# Curation for the GitHub profile README.
+#
+# The scripts pull *facts* from GitHub and the blog; this file holds the
+# *editorial* decisions — what to feature, in what order, and how to describe
+# it. Edit here, then run `make refresh`.
+# ---------------------------------------------------------------------------
+
+[github]
+user = "bcollard"
+# Repos never surfaced by `make report` as "consider featuring".
+# The profile repo itself, forks kept only for local builds, and dead ends.
+exclude = [
+  "bcollard",
+  "hugo-coder-theme", "homebrew-core", "jekyll-blog",
+  "pileenretard.github.io", "angular-tp-contactlist", "custom-scripts",
+  "node-express4", "busybox", "my-nodejs-app-from-backstage-tpl",
+]
+
+[blog]
+# Overridable with BLOG_DIR=/path/to/blog make refresh
+path = "../blog"
+base_url = "https://baptistout.net"
+
+[report]
+# `make report` collapses unstarred repos untouched for this long.
+stale_after_years = 3
+
+[links]
+# Substrings of URLs that `make check` should not fetch (badge/stat services
+# that rate-limit aggressively and are not content links).
+skip = ["img.shields.io", "github-readme-stats.vercel.app"]
+
+# ---------------------------------------------------------------------------
+# Featured project cards.
+# The HTML card grid in README.md is hand-written — prose that good is worth
+# owning. This list only tells `make report` which repos are already featured,
+# so it can flag drift (renames, archival, a new repo that outgrew the list).
+# ---------------------------------------------------------------------------
+featured = ["klimax", "porthole", "headsmith", "chrome-advanced-bookmarks"]
+
+# ---------------------------------------------------------------------------
+# Toolbelt table  ->  region `toolbelt`
+# `repo` is owner/name. Stars and language are pulled live.
+# `site` is optional. `blurb` is markdown.
+# ---------------------------------------------------------------------------
+[[toolbelt]]
+repo = "bcollard/keycloak-cli"
+blurb = "Manage Keycloak realms, clients, users, groups and OAuth scopes from the terminal. No Docker, no Java, no `kcadm.sh` in a pod."
+
+[[toolbelt]]
+repo = "bcollard/homepki"
+blurb = "Your own three-tier PKI for home labs — root CA, intermediates, server & client certs. mTLS labs in four commands."
+
+[[toolbelt]]
+repo = "bcollard/push-to-cdn"
+blurb = "Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets."
+
+[[toolbelt]]
+repo = "Kong/kuma-migrator"
+blurb = "Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14."
+
+[[toolbelt]]
+repo = "bcollard/claude-status-macos-menu-bar"
+name = "Claude Status"
+site = "https://claudestatus.runlocal.dev/"
+blurb = "macOS menu-bar app for Claude Code usage: live plan limits, today's spend, weekly cap, per-model breakdown. ~1.5k lines of Swift, no Electron."
+
+[[toolbelt]]
+repo = "bcollard/slack-clauded-status-updater"
+blurb = "Rotates your Slack status with Claude Code \"thinking mode\" words on a schedule. Cloud Function + Scheduler + Terraform, because why not."
+lang = "Go · HCL"
+
+# ---------------------------------------------------------------------------
+# Upstream contributions  ->  region `upstream`
+# Built from `gh search prs --author <user>`. Repos you own are dropped.
+# ---------------------------------------------------------------------------
+[upstream]
+# Repos with at least this many merged PRs get a "~N merged PRs" count.
+count_threshold = 5
+# Repos listed here appear first, in this order, with the given description.
+# Anything merged elsewhere is rolled into a trailing "also" line.
+order = [
+  "containerd/containerd",
+  "lima-vm/lima",
+  "gnachman/iTerm2",
+  "Kong/charts",
+  "kgateway-dev/kgateway",
+]
+# Repos never shown (own forks, private-org noise, trivial one-liners).
+exclude = [
+  "Kong/kuma-migrator",
+  "kong-education/edu-strigo-courses",
+  "KongHQ-CX/architecture-decision-records",
+  "KongHQ-CX/modular-playbooks",
+  "sfeir-open-source/sfeir-school-terraform",
+  "scraly/developers-conferences-agenda",
+  "eddycharly/tekton-helm",
+  "djannot/envoyctl",
+  "servicemesh-es/servicemesh.es",
+  "solo-io/hugo-theme-soloio",
+  "solo-io/solo-blog",
+  "gravitee-io/gravitee-docs",
+]
+
+[[upstream.highlight]]
+repo = "containerd/containerd"
+text = "`cri`: honour the platform configured in `runtime_platforms`"
+
+[[upstream.highlight]]
+repo = "lima-vm/lima"
+text = "stop identifying additional disks by filesystem label"
+
+[[upstream.highlight]]
+repo = "gnachman/iTerm2"
+text = "two-row tab bar"
+
+[[upstream.highlight]]
+repo = "Kong/charts"
+text = "`Service.spec.trafficDistribution` support for zone-aware routing"
+
+[[upstream.highlight]]
+repo = "kgateway-dev/kgateway"
+label = "kgateway-dev/kgateway"
+suffix = "(ex-Gloo Edge)"
+text = "production-readiness guides, zero-downtime gateway rollouts, NLB/TLS termination, timeouts, dynamic forward proxy"
+
+# ---------------------------------------------------------------------------
+# Writing  ->  region `writing`
+# `slug` must exist under content/posts/ in the blog repo. Titles come from the
+# blog front matter, so renaming a post there updates the README.
+# `note` is appended after an em dash. `{stars:repo}` expands to a live count.
+# ---------------------------------------------------------------------------
+[[writing]]
+slug = "kubernetes-clusters-on-macos-with-loadbalancer-without-docker-desktop"
+title = "Run multiple Kubernetes clusters on macOS with LoadBalancer support"
+note = "the post that became [`kind-on-lima`](https://github.com/bcollard/kind-on-lima-public) ⭐{stars:kind-on-lima-public}, and eventually `klimax`"
+
+[[writing]]
+slug = "how-kubelet-actually-runs-containers"
+
+[[writing]]
+slug = "oidc"
+title = "Let's make OpenID Connect crystal-clear"
+
+[[writing]]
+slug = "passwordless-authentication-webauthn-keycloak-istio"
+
+[[writing]]
+slug = "upgrade-envoy-http3"
+
+[[writing]]
+slug = "how-i-conduct-technical-interviews-questions-matrix"
+
+# ---------------------------------------------------------------------------
+# Talks  ->  region `talks`
+# content/other/ mixes conference talks with articles published on vendor
+# blogs, and nothing in the front matter distinguishes them — so list the
+# talks here. Titles and URLs still come from the blog.
+# ---------------------------------------------------------------------------
+[talks]
+slugs = [
+  "apidays-london-2022",
+  "apidays-paris-2022",
+  "container-days-hamburg",
+  "kubehuddle-edinburgh",
+  "opensource-xp-paris",
+  "apidays-paris-2023",
+  "webinar-10-things-istio",
+]

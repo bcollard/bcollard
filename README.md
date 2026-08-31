@@ -84,16 +84,20 @@ attested — `gh attestation verify` the zip you installed.
 
 ## 🧰 The toolbelt — `brew install`-able single binaries
 
+<!-- profile:begin:toolbelt -->
 | | | |
 |---|---|---|
 | **[keycloak-cli](https://github.com/bcollard/keycloak-cli)** | Manage Keycloak realms, clients, users, groups and OAuth scopes from the terminal. No Docker, no Java, no `kcadm.sh` in a pod. | `Go` |
 | **[homepki](https://github.com/bcollard/homepki)** | Your own three-tier PKI for home labs — root CA, intermediates, server & client certs. mTLS labs in four commands. | `Go` |
-| **[push-to-cdn](https://github.com/bcollard/push-to-cdn)** | Drop a file in a GCS bucket, get a public URL back. For workshops and demos. | `Go` |
+| **[push-to-cdn](https://github.com/bcollard/push-to-cdn)** | Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets. | `Go` |
 | **[kuma-migrator](https://github.com/Kong/kuma-migrator)** | Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14. | `Go` |
 | **[Claude Status](https://github.com/bcollard/claude-status-macos-menu-bar)** · [site](https://claudestatus.runlocal.dev/) | macOS menu-bar app for Claude Code usage: live plan limits, today's spend, weekly cap, per-model breakdown. ~1.5k lines of Swift, no Electron. | `Swift` |
-| **[slack-clauded-status-updater](https://github.com/bcollard/slack-clauded-status-updater)** | Rotates your Slack status with Claude Code "thinking mode" words on a schedule. Cloud Function + Scheduler + Terraform, because why not. | `Go` · `HCL` |
+| **[slack-clauded-status-updater](https://github.com/bcollard/slack-clauded-status-updater)** | Rotates your Slack status with Claude Code "thinking mode" words on a schedule. Cloud Function + Scheduler + Terraform, because why not. | `Go · HCL` |
+<!-- profile:end:toolbelt -->
 
-Taps: [`bcollard/klimax`](https://github.com/bcollard/homebrew-klimax) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator)
+<!-- profile:begin:taps -->
+Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/klimax`](https://github.com/bcollard/homebrew-klimax) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn)
+<!-- profile:end:taps -->
 
 ---
 
@@ -101,12 +105,14 @@ Taps: [`bcollard/klimax`](https://github.com/bcollard/homebrew-klimax) · [`bcol
 
 Where I send patches when the tool I depend on is missing a piece:
 
+<!-- profile:begin:upstream -->
 - **[containerd/containerd](https://github.com/containerd/containerd)** — `cri`: honour the platform configured in `runtime_platforms`
 - **[lima-vm/lima](https://github.com/lima-vm/lima)** — stop identifying additional disks by filesystem label
 - **[gnachman/iTerm2](https://github.com/gnachman/iTerm2)** — two-row tab bar
 - **[Kong/charts](https://github.com/Kong/charts)** — `Service.spec.trafficDistribution` support for zone-aware routing
-- **[kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway)** (ex-Gloo Edge) — ~25 merged PRs: production-readiness guides, zero-downtime gateway rollouts, NLB/TLS termination, timeouts, dynamic forward proxy
-- **[kumahq/kuma-website](https://github.com/kumahq/kuma-website)** · **[kuma-demo](https://github.com/kumahq/kuma-demo)** · **[gohugoio/hugo](https://github.com/gohugoio/hugo)** · **[mccutchen/go-httpbin](https://github.com/mccutchen/go-httpbin)** · **[fluent-plugin-amqp](https://github.com/giraffi/fluent-plugin-amqp)**
+- **[kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway)** (ex-Gloo Edge) — ~28 merged PRs: production-readiness guides, zero-downtime gateway rollouts, NLB/TLS termination, timeouts, dynamic forward proxy
+- **[mccutchen/go-httpbin](https://github.com/mccutchen/go-httpbin)** · **[kumahq/kuma-demo](https://github.com/kumahq/kuma-demo)** · **[kumahq/kuma-website](https://github.com/kumahq/kuma-website)** · **[gohugoio/hugo](https://github.com/gohugoio/hugo)** · **[giraffi/fluent-plugin-amqp](https://github.com/giraffi/fluent-plugin-amqp)**
+<!-- profile:end:upstream -->
 
 ---
 
@@ -114,14 +120,26 @@ Where I send patches when the tool I depend on is missing a piece:
 
 📝 **[baptistout.net](https://baptistout.net/posts/)** — long-form, mostly on things that are annoying to figure out from the docs:
 
+<!-- profile:begin:writing -->
 - [Run multiple Kubernetes clusters on macOS with LoadBalancer support](https://baptistout.net/posts/kubernetes-clusters-on-macos-with-loadbalancer-without-docker-desktop/) — the post that became [`kind-on-lima`](https://github.com/bcollard/kind-on-lima-public) ⭐30, and eventually `klimax`
 - [How Kubelet actually runs containers](https://baptistout.net/posts/how-kubelet-actually-runs-containers/)
 - [Let's make OpenID Connect crystal-clear](https://baptistout.net/posts/oidc/)
 - [Passwordless authentication with WebAuthn, Keycloak and Istio](https://baptistout.net/posts/passwordless-authentication-webauthn-keycloak-istio/)
 - [Upgrade to HTTP/3 with Envoy](https://baptistout.net/posts/upgrade-envoy-http3/)
 - [How I conduct technical interviews, with the question matrix](https://baptistout.net/posts/how-i-conduct-technical-interviews-questions-matrix/)
+<!-- profile:end:writing -->
 
-🎤 **Talks** — [APIDays London](https://baptistout.net/other/apidays-london-2022/) & [Paris](https://baptistout.net/other/apidays-paris-2022/) (*Istio Gateway on steroids with WebAuthn*), [ContainerDays Hamburg](https://baptistout.net/other/container-days-hamburg/) & [KubeHuddle Edinburgh](https://baptistout.net/other/kubehuddle-edinburgh/) (*Get to know Envoy*), [OSXP Paris](https://baptistout.net/other/opensource-xp-paris/), [APIDays Paris 2023](https://baptistout.net/other/apidays-paris-2023/) (*Multi-cluster Mesh by Kong*), and a [Solo.io webinar](https://baptistout.net/other/webinar-10-things-istio/) on *10 things I wish I'd known before using Istio*.
+🎤 **Talks & webinars**
+
+<!-- profile:begin:talks -->
+- [Multi-cluster Mesh by Kong — APIDays Paris](https://baptistout.net/other/apidays-paris-2023/) · *Dec 2023*
+- [Get to know Envoy — ContainerDays Hamburg](https://baptistout.net/other/container-days-hamburg/) · *Sep 2023*
+- [10 things I wish I had known before using Istio — Solo.io](https://baptistout.net/other/webinar-10-things-istio/) · *Mar 2023*
+- [Istio Gateway on steroids with WebAuthn — APIDays Paris](https://baptistout.net/other/apidays-paris-2022/) · *Dec 2022*
+- [Envoy — le proxy moderne pour les infra cloud-native — OSXP Paris](https://baptistout.net/other/opensource-xp-paris/) · *Nov 2022*
+- [Istio Gateway on steroids with WebAuthn — APIDays London](https://baptistout.net/other/apidays-london-2022/) · *Oct 2022*
+- [Getting started with Envoy — KubeHuddle Edinburgh](https://baptistout.net/other/kubehuddle-edinburgh/) · *Oct 2022*
+<!-- profile:end:talks -->
 
 ---
 
