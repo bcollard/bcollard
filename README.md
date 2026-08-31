@@ -29,7 +29,7 @@ up on the Homebrew tap.
 <tr>
 <td width="50%" valign="top">
 
-### [klimax](https://github.com/bcollard/klimax) · [klimax.dev](https://klimax.dev)
+### [klimax](https://github.com/bcollard/klimax) · [website](https://klimax.dev)
 
 Multi-cluster [kind](https://kind.sigs.k8s.io/) manager for Apple Silicon. One Lima VM,
 many clusters, and **pure L3 routing from macOS into the kind bridge** — no SNAT,
@@ -41,7 +41,7 @@ Colima or Rancher Desktop.
 </td>
 <td width="50%" valign="top">
 
-### [porthole](https://github.com/bcollard/porthole) · [demo](https://porthole.runlocal.dev/)
+### [porthole](https://github.com/bcollard/porthole) · [website](https://porthole.runlocal.dev/)
 
 Web-based debug terminal for Kubernetes, **designed for devs, not ops**. Pick a
 pod, inject an ephemeral container (`netshoot`, `psql`, …), attach from the
@@ -56,7 +56,7 @@ corporate identity.
 <tr>
 <td width="50%" valign="top">
 
-### [headsmith](https://github.com/bcollard/headsmith) · [site](https://bcollard.github.io/headsmith/)
+### [headsmith](https://github.com/bcollard/headsmith) · [website](https://bcollard.github.io/headsmith/)
 
 HTTP header editor for Chrome, built on `declarativeNetRequest` **and nothing
 else** — there is no code path that *could* see your traffic, because none of the
@@ -68,13 +68,27 @@ in CI so it can't be added quietly.
 </td>
 <td width="50%" valign="top">
 
-### [Advanced Bookmarks](https://github.com/bcollard/chrome-advanced-bookmarks) · [Web Store](https://chromewebstore.google.com/detail/advanced-bookmarks/lllhlboikkambnobbpjifhkpckiigdio)
+### [Advanced Bookmarks](https://github.com/bcollard/chrome-advanced-bookmarks) · [website](https://bcollard.github.io/chrome-advanced-bookmarks/)
 
 Replaces Chrome's bookmark dialog with a fuzzy-searchable folder picker. Type
 three letters, land in any nested folder. Every release is byte-reproducible and
 attested — `gh attestation verify` the zip you installed.
 
-`JavaScript` · reproducible builds
+`JavaScript` · reproducible builds · [Chrome Web Store](https://chromewebstore.google.com/detail/advanced-bookmarks/lllhlboikkambnobbpjifhkpckiigdio)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+
+### keycloak-cloudrun
+
+Keycloak on Google Cloud Run, entirely in Terraform — Cloud SQL Postgres behind a
+Serverless VPC connector, a global load balancer, managed TLS and private DNS. Built
+so a lab IdP **survives cluster resets**: wipe every kind cluster you own and the
+realms, clients and users are still there.
+
+`Terraform` · Cloud Run · Cloud SQL · Secret Manager
 
 </td>
 </tr>

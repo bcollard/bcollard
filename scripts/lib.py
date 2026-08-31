@@ -38,6 +38,20 @@ def load_config() -> dict:
         die(f"missing config file: {CONFIG}")
     with CONFIG.open("rb") as fh:
         cfg = tomllib.load(fh)
+    # A key indented under the wrong [table] silently reads as absent, which is
+    # how a whole check can quietly become a no-op. Assert the shape instead.
+    expected = {
+        "github": dict, "blog": dict, "links": dict, "report": dict,
+        "upstream": dict, "talks": dict,
+        "featured": list, "toolbelt": list, "writing": list,
+    }
+    for key, kind in expected.items():
+        if key not in cfg:
+            die(f"config: missing top-level key '{key}' "
+                f"(is it indented under the wrong [table]?)")
+        if not isinstance(cfg[key], kind):
+            die(f"config: '{key}' should be {kind.__name__}, got {type(cfg[key]).__name__}")
+
     # BLOG_DIR env var wins over the configured path.
     blog = cfg.setdefault("blog", {})
     blog["path"] = os.environ.get("BLOG_DIR") or blog.get("path", "../blog")

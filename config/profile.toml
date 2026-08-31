@@ -6,6 +6,14 @@
 # it. Edit here, then run `make refresh`.
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Featured project cards.
+# The HTML card grid in README.md is hand-written — prose that good is worth
+# owning. This list only tells `make report` which repos are already featured,
+# so it can flag drift (renames, archival, a new repo that outgrew the list).
+# ---------------------------------------------------------------------------
+featured = ["klimax", "porthole", "headsmith", "chrome-advanced-bookmarks", "keycloak-cloudrun"]
+
 [github]
 user = "bcollard"
 # Repos never surfaced by `make report` as "consider featuring".
@@ -31,13 +39,6 @@ stale_after_years = 3
 # that rate-limit aggressively and are not content links).
 skip = ["img.shields.io", "github-readme-stats.vercel.app"]
 
-# ---------------------------------------------------------------------------
-# Featured project cards.
-# The HTML card grid in README.md is hand-written — prose that good is worth
-# owning. This list only tells `make report` which repos are already featured,
-# so it can flag drift (renames, archival, a new repo that outgrew the list).
-# ---------------------------------------------------------------------------
-featured = ["klimax", "porthole", "headsmith", "chrome-advanced-bookmarks"]
 
 # ---------------------------------------------------------------------------
 # Toolbelt table  ->  region `toolbelt`
