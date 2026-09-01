@@ -11,9 +11,11 @@ import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import README, die, load_config  # noqa: E402
+from lib import README, ROOT, die, load_config  # noqa: E402
 
 URL = re.compile(r"https?://[^\s\"'()<>\]]+")
+# src="assets/x.svg" / srcset="..." / markdown ![alt](path) — relative paths only.
+LOCAL = re.compile(r'(?:src|srcset)="(?!https?:|data:)([^"]+)"|\]\((?!https?:|#)([^)\s]+)\)')
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) profile-readme-linkcheck"
 TIMEOUT = 15
 
@@ -29,11 +31,31 @@ def fetch(url: str) -> tuple[str, int, str]:
         return url, 0, f"{type(e).__name__}: {e}"
 
 
+def check_local(text: str) -> list[tuple[str, str]]:
+    """Relative paths in the README must exist on disk, or the image is broken."""
+    missing = []
+    seen = set()
+    for m in LOCAL.finditer(text):
+        rel = (m.group(1) or m.group(2) or "").strip()
+        if not rel or rel in seen:
+            continue
+        seen.add(rel)
+        if not (ROOT / rel).exists():
+            missing.append((rel, "no such file"))
+    print(f"checking {len(seen)} local path(s)")
+    for rel in sorted(seen):
+        ok = (ROOT / rel).exists()
+        print(f"  {'ok ' if ok else 'FAIL'}       {rel}")
+    print()
+    return missing
+
+
 def main() -> None:
     cfg = load_config()
     skip = cfg.get("links", {}).get("skip", [])
     if not README.exists():
         die(f"missing {README}")
+    local_missing = check_local(README.read_text())
 
     urls = sorted({u.rstrip(".,;") for u in URL.findall(README.read_text())})
     checked = [u for u in urls if not any(s in u for s in skip)]
@@ -48,6 +70,8 @@ def main() -> None:
             print(f"  {'ok ' if ok else 'FAIL'} {status or '---'}  {url}" + (f"  {note}" if note else ""))
 
     print()
+    for rel, note in local_missing:
+        failures.append((rel, 0, note))
     if failures:
         print(f"{len(failures)} broken link(s):", file=sys.stderr)
         for url, status, note in failures:

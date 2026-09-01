@@ -37,7 +37,7 @@ stale_after_years = 3
 [links]
 # Substrings of URLs that `make check` should not fetch (badge/stat services
 # that rate-limit aggressively and are not content links).
-skip = ["img.shields.io", "github-readme-stats.vercel.app"]
+skip = ["img.shields.io"]
 
 
 # ---------------------------------------------------------------------------

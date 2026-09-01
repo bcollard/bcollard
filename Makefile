@@ -45,8 +45,12 @@ pull: ## Force a fresh collection, ignoring the cache
 
 # --- rendering ------------------------------------------------------------
 
+.PHONY: cards
+cards: data ## Redraw the stats/language SVGs in assets/
+	@$(PYTHON) $(SCRIPTS)/make_cards.py > /dev/null
+
 .PHONY: render
-render: data ## Regenerate the marked regions of README.md
+render: data cards ## Regenerate the marked regions of README.md and the cards
 	@$(PYTHON) $(SCRIPTS)/render.py > /dev/null
 
 .PHONY: refresh
@@ -73,10 +77,10 @@ verify: render check ## Render, then check links — run before publishing
 
 .PHONY: publish
 publish: ## Commit and push README.md to the profile repo
-	@git diff --quiet -- README.md config Makefile scripts && \
-	  git diff --cached --quiet -- README.md config Makefile scripts && \
+	@git diff --quiet -- README.md assets config Makefile scripts && \
+	  git diff --cached --quiet -- README.md assets config Makefile scripts && \
 	  { echo "nothing to publish"; exit 0; } || true
-	@git add README.md config Makefile scripts .gitignore MAINTAINING.md
+	@git add README.md assets config Makefile scripts .gitignore MAINTAINING.md
 	@git commit -m "profile: refresh from GitHub + blog data" \
 	  -m "Regenerated with \`make refresh\`."
 	@git push

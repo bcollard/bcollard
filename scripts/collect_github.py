@@ -14,6 +14,24 @@ REPO_FIELDS = (
     "isFork,isPrivate,isArchived,updatedAt,url,homepageUrl"
 )
 
+LANG_QUERY = """
+query($login: String!, $cursor: String) {
+  user(login: $login) {
+    repositories(first: 100, after: $cursor, ownerAffiliations: OWNER,
+                 isFork: false, privacy: PUBLIC) {
+      pageInfo { hasNextPage endCursor }
+      nodes {
+        name
+        isArchived
+        languages(first: 12, orderBy: {field: SIZE, direction: DESC}) {
+          edges { size node { name color } }
+        }
+      }
+    }
+  }
+}
+"""
+
 CONTRIB_QUERY = """
 query($login: String!) {
   user(login: $login) {
@@ -131,6 +149,34 @@ def collect_referenced(cfg: dict, owned: set[str]) -> list[dict]:
     return out
 
 
+def collect_languages(user: str, exclude: set[str]) -> list[dict]:
+    """Bytes per language across owned public non-fork repos, with GitHub's colours."""
+    sizes: dict[str, int] = {}
+    colors: dict[str, str] = {}
+    cursor = None
+    while True:
+        args = ["api", "graphql", "-f", f"query={LANG_QUERY}", "-F", f"login={user}"]
+        if cursor:
+            args += ["-F", f"cursor={cursor}"]
+        page = gh(*args)["data"]["user"]["repositories"]
+        for repo in page["nodes"]:
+            if repo["name"] in exclude or repo["isArchived"]:
+                continue
+            for edge in repo["languages"]["edges"]:
+                name = edge["node"]["name"]
+                sizes[name] = sizes.get(name, 0) + edge["size"]
+                colors[name] = edge["node"]["color"] or "#8b949e"
+        if not page["pageInfo"]["hasNextPage"]:
+            break
+        cursor = page["pageInfo"]["endCursor"]
+
+    total = sum(sizes.values()) or 1
+    return [
+        {"name": n, "bytes": b, "share": b / total, "color": colors[n]}
+        for n, b in sorted(sizes.items(), key=lambda kv: -kv[1])
+    ]
+
+
 def collect_profile(user: str) -> dict:
     res = gh("api", "graphql", "-f", f"query={CONTRIB_QUERY}", "-F", f"login={user}")
     u = res["data"]["user"]
@@ -169,6 +215,8 @@ def main() -> None:
     repos += collect_referenced(cfg, {r["nameWithOwner"] for r in repos})
 
     excluded = set(cfg["github"].get("exclude", []))
+    info("github: language breakdown")
+    languages = collect_languages(user, excluded)
     taps = sorted(
         r["name"] for r in repos
         if r["name"].startswith("homebrew-")
@@ -185,6 +233,22 @@ def main() -> None:
             "prs": prs,
             "issues": issues,
             "taps": taps,
+            "languages": languages,
+            "totals": {
+                "publicRepos": sum(
+                    1 for r in repos
+                    if not r["isPrivate"] and not r["isFork"] and not r.get("external")
+                ),
+                "stars": sum(
+                    r["stars"] for r in repos
+                    if not r["isPrivate"] and not r["isFork"] and not r.get("external")
+                ),
+                "mergedPRs": sum(1 for p in prs if p["state"] == "merged"),
+                "upstreamRepos": len({
+                    p["repo"] for p in prs
+                    if p["repo"].split("/")[0].lower() != user.lower()
+                }),
+            },
         },
     )
     merged = sum(1 for p in prs if p["state"] == "merged")

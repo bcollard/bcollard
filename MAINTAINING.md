@@ -43,6 +43,21 @@ Generated regions are delimited in `README.md`:
 | `writing` | `[[writing]]` slugs; titles and URLs come from the blog's front matter |
 | `talks` | `talks.slugs`; titles and dates come from `content/other/` |
 
+## The stats cards
+
+`assets/{stats,languages}-{light,dark}.svg` are drawn by `scripts/make_cards.py`
+from `data/github.json` and committed to the repo. `make cards` redraws them;
+`make render` and `make refresh` do it for you.
+
+They previously came from the shared `github-readme-stats.vercel.app` instance,
+which returned `DEPLOYMENT_PAUSED` and left two broken images on the profile.
+Drawing them here removes the dependency entirely — no rate limit, nothing to
+go down, and the numbers come from the same snapshot as the rest of the README.
+
+The README references them through `<picture>` with a
+`(prefers-color-scheme: dark)` source, which is the variant GitHub honours.
+Edit the palette in `THEMES` and the layout in `stats_card` / `languages_card`.
+
 **Hand-written:** the header, the intro paragraph, the four featured project
 cards, the tech badges and the footer. Edit those in `README.md` directly —
 `make render` will not touch them.
@@ -78,6 +93,10 @@ prints what it finds:
 - side projects on the blog's page but missing here (and the reverse)
 - recent posts not linked, and linked posts still marked `draft` — those 404
 - empty GitHub sidebar fields (`bio`, `company`) that no README can fill
+
+`make check` additionally verifies that every relative path in the README (the
+card SVGs) actually exists on disk, so a renamed asset fails the build rather
+than silently rendering as a broken image.
 
 Unstarred repos untouched for 3+ years are collapsed; `make report ARGS=--all`
 lists them.

@@ -177,8 +177,14 @@ Where I send patches when the tool I depend on is missing a piece:
 ---
 
 <p align="center">
-  <img alt="GitHub stats" height="150" src="https://github-readme-stats.vercel.app/api?username=bcollard&show_icons=true&hide_border=true&include_all_commits=true&count_private=true&theme=transparent">
-  <img alt="Top languages" height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=bcollard&layout=compact&hide_border=true&langs_count=8&theme=transparent">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
+    <img alt="572 contributions and 522 commits in the last 12 months, 55 merged pull requests across 22 upstream repositories, 46 public repositories, 50 stars earned" height="180" src="assets/stats-light.svg">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
+    <img alt="Language breakdown by bytes across public repositories: Go 34.1%, TypeScript 20.4%, Swift 16.4%, Shell 7.0%, JavaScript 6.2%, HTML 5.1%, CSS 3.2%, Makefile 2.8%" height="180" src="assets/languages-light.svg">
+  </picture>
 </p>
 
 <p align="center"><sub><em>Read. Understand. Do. Repeat.</em></sub></p>
