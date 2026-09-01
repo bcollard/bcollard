@@ -1,7 +1,7 @@
 <h1 align="center">Baptiste Collard</h1>
 
 <p align="center">
-  <em>{cloud, middleware, software} architect &nbsp;·&nbsp; dev.sec.ops. &nbsp;·&nbsp; dad.cka.ipa.</em>
+  <em>{cloud, middleware, software} architect &nbsp;·&nbsp; dev.sec.ops.</em>
 </p>
 
 <p align="center">
