@@ -13,8 +13,8 @@
 # so it can flag drift (renames, archival, a new repo that outgrew the list).
 # ---------------------------------------------------------------------------
 featured = [
-  "klimax", "porthole", "headsmith", "chrome-advanced-bookmarks",
-  "pastiche", "keycloak-cloudrun",
+  "klimax", "klimax-ui", "porthole", "headsmith",
+  "chrome-advanced-bookmarks", "pastiche",
 ]
 
 [github]

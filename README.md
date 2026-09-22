@@ -36,7 +36,7 @@ many clusters, and **pure L3 routing from macOS into the kind bridge** — no SN
 no VPN, real IPs for pods and `LoadBalancer` services. Coexists with OrbStack,
 Colima or Rancher Desktop.
 
-`Go` · dependency-free · [`klimax-ui`](https://github.com/bcollard/klimax-ui) SwiftUI companion app
+`Go` · dependency-free · `brew install --cask bcollard/klimax/klimax`
 
 </td>
 <td width="50%" valign="top">
@@ -92,14 +92,12 @@ image history with inline previews, type filters and instant search — and
 </td>
 <td width="50%" valign="top">
 
-### keycloak-cloudrun
+### [klimax-ui](https://github.com/bcollard/klimax-ui) · [website](https://klimax.dev)
 
-Keycloak on Google Cloud Run, entirely in Terraform — Cloud SQL Postgres behind a
-Serverless VPC connector, a global load balancer, managed TLS and private DNS. Built
-so a lab IdP **survives cluster resets**: wipe every kind cluster you own and the
-realms, clients and users are still there.
+Menu-bar companion to the [`klimax`](https://github.com/bcollard/klimax) CLI —
+manage the kind clusters it creates without dropping into a terminal.
 
-`Terraform` · Cloud Run · Cloud SQL · Secret Manager
+`Swift` · SwiftUI · `brew install --cask bcollard/klimax/klimax-ui`
 
 </td>
 </tr>
@@ -191,11 +189,11 @@ Where I send patches when the tool I depend on is missing a piece:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
-    <img alt="744 contributions and 640 commits in the last 12 months, 99 merged pull requests across 23 upstream repositories, 51 public repositories, 54 stars earned" height="180" src="assets/stats-light.svg">
+    <img alt="746 contributions and 642 commits in the last 12 months, 99 merged pull requests across 23 upstream repositories, 51 public repositories, 54 stars earned" height="180" src="assets/stats-light.svg">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
-    <img alt="Language breakdown by bytes across public repositories: Go 38.3%, Swift 20.9%, TypeScript 15.1%, Shell 5.8%, HTML 5.3%, JavaScript 4.8%, CSS 3.4%, Makefile 2.5%" height="180" src="assets/languages-light.svg">
+    <img alt="Language breakdown by bytes across public repositories: Go 39.1%, Swift 20.6%, TypeScript 14.9%, Shell 5.7%, HTML 5.2%, JavaScript 4.7%, CSS 3.4%, Makefile 2.5%" height="180" src="assets/languages-light.svg">
   </picture>
 </p>
 
