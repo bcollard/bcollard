@@ -12,7 +12,10 @@
 # owning. This list only tells `make report` which repos are already featured,
 # so it can flag drift (renames, archival, a new repo that outgrew the list).
 # ---------------------------------------------------------------------------
-featured = ["klimax", "porthole", "headsmith", "chrome-advanced-bookmarks", "keycloak-cloudrun"]
+featured = [
+  "klimax", "porthole", "headsmith", "chrome-advanced-bookmarks",
+  "pastiche", "keycloak-cloudrun",
+]
 
 [github]
 user = "bcollard"
@@ -56,6 +59,10 @@ blurb = "Your own three-tier PKI for home labs — root CA, intermediates, serve
 [[toolbelt]]
 repo = "bcollard/push-to-cdn"
 blurb = "Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets."
+
+[[toolbelt]]
+repo = "bcollard/svg2drawio"
+blurb = "Turn an SVG into a real draw.io diagram — every element becomes a native mxGraph cell you can move, restyle and edit, not an embedded image."
 
 [[toolbelt]]
 repo = "Kong/kuma-migrator"

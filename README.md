@@ -79,7 +79,18 @@ attested — `gh attestation verify` the zip you installed.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top">
+<td width="50%" valign="top">
+
+### [Pastiche](https://github.com/bcollard/pastiche) · [website](https://pastiche.runlocal.dev/)
+
+Keyboard-first clipboard manager for macOS, living in the menu bar. Text and
+image history with inline previews, type filters and instant search — and
+**nothing leaves the Mac**.
+
+`Swift` · SwiftUI · `brew install --cask bcollard/pastiche/pastiche`
+
+</td>
+<td width="50%" valign="top">
 
 ### keycloak-cloudrun
 
@@ -102,15 +113,16 @@ realms, clients and users are still there.
 | | | |
 |---|---|---|
 | **[keycloak-cli](https://github.com/bcollard/keycloak-cli)** | Manage Keycloak realms, clients, users, groups and OAuth scopes from the terminal. No Docker, no Java, no `kcadm.sh` in a pod. | `Go` |
-| **[homepki](https://github.com/bcollard/homepki)** | Your own three-tier PKI for home labs — root CA, intermediates, server & client certs. mTLS labs in four commands. | `Go` |
+| **[homepki](https://github.com/bcollard/homepki)** · [website](https://bcollard.github.io/homepki/) | Your own three-tier PKI for home labs — root CA, intermediates, server & client certs. mTLS labs in four commands. | `Go` |
 | **[push-to-cdn](https://github.com/bcollard/push-to-cdn)** | Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets. | `Go` |
-| **[kuma-migrator](https://github.com/Kong/kuma-migrator)** | Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14. | `Go` |
-| **[Claude Status](https://github.com/bcollard/claude-status-macos-menu-bar)** · [site](https://claudestatus.runlocal.dev/) | macOS menu-bar app for Claude Code usage: live plan limits, today's spend, weekly cap, per-model breakdown. ~1.5k lines of Swift, no Electron. | `Swift` |
+| **[svg2drawio](https://github.com/bcollard/svg2drawio)** · [website](https://svg2drawio.runlocal.dev) | Turn an SVG into a real draw.io diagram — every element becomes a native mxGraph cell you can move, restyle and edit, not an embedded image. | `Go` |
+| **[kuma-migrator](https://github.com/Kong/kuma-migrator)** · [website](https://kong.github.io/kuma-migrator/) | Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14. | `Go` |
+| **[Claude Status](https://github.com/bcollard/claude-status-macos-menu-bar)** · [website](https://claudestatus.runlocal.dev/) | macOS menu-bar app for Claude Code usage: live plan limits, today's spend, weekly cap, per-model breakdown. ~1.5k lines of Swift, no Electron. | `Swift` |
 | **[slack-clauded-status-updater](https://github.com/bcollard/slack-clauded-status-updater)** | Rotates your Slack status with Claude Code "thinking mode" words on a schedule. Cloud Function + Scheduler + Terraform, because why not. | `Go · HCL` |
 <!-- profile:end:toolbelt -->
 
 <!-- profile:begin:taps -->
-Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/klimax`](https://github.com/bcollard/homebrew-klimax) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn)
+Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/klimax`](https://github.com/bcollard/homebrew-klimax) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator) · [`bcollard/pastiche`](https://github.com/bcollard/homebrew-pastiche) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn) · [`bcollard/svg2drawio`](https://github.com/bcollard/homebrew-svg2drawio)
 <!-- profile:end:taps -->
 
 ---
@@ -125,7 +137,7 @@ Where I send patches when the tool I depend on is missing a piece:
 - **[gnachman/iTerm2](https://github.com/gnachman/iTerm2)** — two-row tab bar
 - **[Kong/charts](https://github.com/Kong/charts)** — `Service.spec.trafficDistribution` support for zone-aware routing
 - **[kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway)** (ex-Gloo Edge) — ~28 merged PRs: production-readiness guides, zero-downtime gateway rollouts, NLB/TLS termination, timeouts, dynamic forward proxy
-- **[mccutchen/go-httpbin](https://github.com/mccutchen/go-httpbin)** · **[kumahq/kuma-demo](https://github.com/kumahq/kuma-demo)** · **[kumahq/kuma-website](https://github.com/kumahq/kuma-website)** · **[gohugoio/hugo](https://github.com/gohugoio/hugo)** · **[giraffi/fluent-plugin-amqp](https://github.com/giraffi/fluent-plugin-amqp)**
+- **[Kong/ai-deck-converter](https://github.com/Kong/ai-deck-converter)** · **[mccutchen/go-httpbin](https://github.com/mccutchen/go-httpbin)** · **[kumahq/kuma-demo](https://github.com/kumahq/kuma-demo)** · **[kumahq/kuma-website](https://github.com/kumahq/kuma-website)** · **[gohugoio/hugo](https://github.com/gohugoio/hugo)** · **[giraffi/fluent-plugin-amqp](https://github.com/giraffi/fluent-plugin-amqp)**
 <!-- profile:end:upstream -->
 
 ---
@@ -179,11 +191,11 @@ Where I send patches when the tool I depend on is missing a piece:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
-    <img alt="572 contributions and 522 commits in the last 12 months, 55 merged pull requests across 22 upstream repositories, 46 public repositories, 50 stars earned" height="180" src="assets/stats-light.svg">
+    <img alt="744 contributions and 640 commits in the last 12 months, 99 merged pull requests across 23 upstream repositories, 51 public repositories, 54 stars earned" height="180" src="assets/stats-light.svg">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
-    <img alt="Language breakdown by bytes across public repositories: Go 34.1%, TypeScript 20.4%, Swift 16.4%, Shell 7.0%, JavaScript 6.2%, HTML 5.1%, CSS 3.2%, Makefile 2.8%" height="180" src="assets/languages-light.svg">
+    <img alt="Language breakdown by bytes across public repositories: Go 38.3%, Swift 20.9%, TypeScript 15.1%, Shell 5.8%, HTML 5.3%, JavaScript 4.8%, CSS 3.4%, Makefile 2.5%" height="180" src="assets/languages-light.svg">
   </picture>
 </p>
 

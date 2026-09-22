@@ -59,7 +59,7 @@ def render_toolbelt(cfg: dict, gh: dict, blog: dict, repos: dict) -> str:
         site = entry.get("site") or repo["homepage"]
         cell = f"**[{name}]({repo['url']})**"
         if site:
-            cell += f" · [site]({site})"
+            cell += f" · [website]({site})"
         lang = entry.get("lang") or repo["language"] or "—"
         rows.append(f"| {cell} | {entry['blurb']} | `{lang}` |")
     return "\n".join(rows)

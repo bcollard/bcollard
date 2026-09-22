@@ -58,6 +58,17 @@ The README references them through `<picture>` with a
 `(prefers-color-scheme: dark)` source, which is the variant GitHub honours.
 Edit the palette in `THEMES` and the layout in `stats_card` / `languages_card`.
 
+**The `alt` text on those two `<picture>` blocks is hand-written and holds the
+generated numbers** — contribution counts, star totals, language percentages.
+`make render` redraws the SVGs but cannot reach inside an HTML attribute, so the
+alt text silently describes the *previous* snapshot until someone updates it.
+After a refresh that changed the cards, read the numbers back out of the SVG and
+match them:
+
+```
+grep -o '>[^<]*<' assets/stats-light.svg | tr -d '><' | grep -v '^\s*$'
+```
+
 **Hand-written:** the header, the intro paragraph, the four featured project
 cards, the tech badges and the footer. Edit those in `README.md` directly —
 `make render` will not touch them.
