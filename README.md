@@ -29,14 +29,14 @@ up on the Homebrew tap.
 <tr>
 <td width="50%" valign="top">
 
-### [klimax](https://github.com/bcollard/klimax) · [website](https://klimax.dev)
+### [marina](https://github.com/bcollard/marina) · [website](https://marina.run)
 
 Multi-cluster [kind](https://kind.sigs.k8s.io/) manager for Apple Silicon. One Lima VM,
 many clusters, and **pure L3 routing from macOS into the kind bridge** — no SNAT,
 no VPN, real IPs for pods and `LoadBalancer` services. Coexists with OrbStack,
 Colima or Rancher Desktop.
 
-`Go` · dependency-free · `brew install --cask bcollard/klimax/klimax`
+`Go` · dependency-free · `brew install --cask bcollard/marina/marina`
 
 </td>
 <td width="50%" valign="top">
@@ -92,12 +92,12 @@ image history with inline previews, type filters and instant search — and
 </td>
 <td width="50%" valign="top">
 
-### [klimax-ui](https://github.com/bcollard/klimax-ui) · [website](https://klimax.dev)
+### [marina-ui](https://github.com/bcollard/marina-ui) · [website](https://marina.run)
 
-Menu-bar companion to the [`klimax`](https://github.com/bcollard/klimax) CLI —
+Menu-bar companion to the [`marina`](https://github.com/bcollard/marina) CLI —
 manage the kind clusters it creates without dropping into a terminal.
 
-`Swift` · SwiftUI · `brew install --cask bcollard/klimax/klimax-ui`
+`Swift` · SwiftUI · `brew install --cask bcollard/marina/marina-ui`
 
 </td>
 </tr>
@@ -120,7 +120,7 @@ manage the kind clusters it creates without dropping into a terminal.
 <!-- profile:end:toolbelt -->
 
 <!-- profile:begin:taps -->
-Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/klimax`](https://github.com/bcollard/homebrew-klimax) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator) · [`bcollard/pastiche`](https://github.com/bcollard/homebrew-pastiche) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn) · [`bcollard/svg2drawio`](https://github.com/bcollard/homebrew-svg2drawio)
+Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator) · [`bcollard/marina`](https://github.com/bcollard/homebrew-marina) · [`bcollard/pastiche`](https://github.com/bcollard/homebrew-pastiche) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn) · [`bcollard/svg2drawio`](https://github.com/bcollard/homebrew-svg2drawio)
 <!-- profile:end:taps -->
 
 ---
@@ -145,7 +145,7 @@ Where I send patches when the tool I depend on is missing a piece:
 📝 **[baptistout.net](https://baptistout.net/posts/)** — long-form, mostly on things that are annoying to figure out from the docs:
 
 <!-- profile:begin:writing -->
-- [Run multiple Kubernetes clusters on macOS with LoadBalancer support](https://baptistout.net/posts/kubernetes-clusters-on-macos-with-loadbalancer-without-docker-desktop/) — the post that became [`kind-on-lima`](https://github.com/bcollard/kind-on-lima-public) ⭐30, and eventually `klimax`
+- [Run multiple Kubernetes clusters on macOS with LoadBalancer support](https://baptistout.net/posts/kubernetes-clusters-on-macos-with-loadbalancer-without-docker-desktop/) — the post that became [`kind-on-lima`](https://github.com/bcollard/kind-on-lima-public) ⭐30, and eventually `marina`
 - [How Kubelet actually runs containers](https://baptistout.net/posts/how-kubelet-actually-runs-containers/)
 - [Let's make OpenID Connect crystal-clear](https://baptistout.net/posts/oidc/)
 - [Passwordless authentication with WebAuthn, Keycloak and Istio](https://baptistout.net/posts/passwordless-authentication-webauthn-keycloak-istio/)

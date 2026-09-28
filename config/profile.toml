@@ -13,7 +13,7 @@
 # so it can flag drift (renames, archival, a new repo that outgrew the list).
 # ---------------------------------------------------------------------------
 featured = [
-  "klimax", "klimax-ui", "porthole", "headsmith",
+  "marina", "marina-ui", "porthole", "headsmith",
   "chrome-advanced-bookmarks", "pastiche",
 ]
 
@@ -142,7 +142,7 @@ text = "production-readiness guides, zero-downtime gateway rollouts, NLB/TLS ter
 [[writing]]
 slug = "kubernetes-clusters-on-macos-with-loadbalancer-without-docker-desktop"
 title = "Run multiple Kubernetes clusters on macOS with LoadBalancer support"
-note = "the post that became [`kind-on-lima`](https://github.com/bcollard/kind-on-lima-public) ⭐{stars:kind-on-lima-public}, and eventually `klimax`"
+note = "the post that became [`kind-on-lima`](https://github.com/bcollard/kind-on-lima-public) ⭐{stars:kind-on-lima-public}, and eventually `marina`"
 
 [[writing]]
 slug = "how-kubelet-actually-runs-containers"
