@@ -45,10 +45,6 @@ once.
 
 - Card and table links are labelled **`website`** — not "site", "demo", or the
   name of the host. A store listing goes on the card's meta line instead.
-- `bcollard/keycloak-cloudrun` is a **private** repo. It had a featured card with
-  a deliberately unlinked title until `marina-ui` took that tile. If it is ever
-  featured again, leave the title unlinked — the URL 404s for every visitor
-  until the repo is made public.
 - Stats come from our own generated SVGs. Do not reintroduce
   `github-readme-stats.vercel.app` — its shared instance returns
   `DEPLOYMENT_PAUSED` and broke these cards before.

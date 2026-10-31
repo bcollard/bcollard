@@ -15,6 +15,8 @@
 featured = [
   "marina", "marina-ui", "porthole", "headsmith",
   "chrome-advanced-bookmarks", "pastiche",
+  "pagesmith", "kong-identity-workflow-builder",
+  "keycloak-cloudrun",
 ]
 
 [github]
@@ -65,6 +67,11 @@ repo = "bcollard/svg2drawio"
 blurb = "Turn an SVG into a real draw.io diagram — every element becomes a native mxGraph cell you can move, restyle and edit, not an embedded image."
 
 [[toolbelt]]
+repo = "bcollard/jwt-signer-vault-jwks-bridge"
+name = "jwks-bridge"
+blurb = "Serves Vault-stored signing keys to Kong's `jwt-signer` plugin and a public JWKS to backends, so every hybrid-mode or Konnect data plane signs with the same key. Staged rotation, stale-if-error."
+
+[[toolbelt]]
 repo = "Kong/kuma-migrator"
 blurb = "Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14."
 
@@ -89,14 +96,14 @@ count_threshold = 5
 # Repos listed here appear first, in this order, with the given description.
 # Anything merged elsewhere is rolled into a trailing "also" line.
 order = [
-  "containerd/containerd",
   "lima-vm/lima",
-  "gnachman/iTerm2",
   "Kong/charts",
   "kgateway-dev/kgateway",
 ]
 # Repos never shown (own forks, private-org noise, trivial one-liners).
 exclude = [
+  "containerd/containerd",
+  "gnachman/iTerm2",
   "Kong/kuma-migrator",
   "kong-education/edu-strigo-courses",
   "KongHQ-CX/architecture-decision-records",
@@ -112,16 +119,8 @@ exclude = [
 ]
 
 [[upstream.highlight]]
-repo = "containerd/containerd"
-text = "`cri`: honour the platform configured in `runtime_platforms`"
-
-[[upstream.highlight]]
 repo = "lima-vm/lima"
 text = "stop identifying additional disks by filesystem label"
-
-[[upstream.highlight]]
-repo = "gnachman/iTerm2"
-text = "two-row tab bar"
 
 [[upstream.highlight]]
 repo = "Kong/charts"

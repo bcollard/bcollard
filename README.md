@@ -101,6 +101,47 @@ manage the kind clusters it creates without dropping into a terminal.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Pagesmith](https://github.com/bcollard/pagesmith) · [website](https://bcollard.github.io/pagesmith/)
+
+Full-page screenshots for Chrome, as one image or PDF. Handles sticky headers,
+lazy-loaded content and apps that scroll an inner panel. **No network code in
+the shipped bundle** — CI checks the built output and fails if a `fetch` appears.
+
+`TypeScript` · `activeTab` only · [Chrome Web Store](https://chromewebstore.google.com/detail/nclcaennencgjadomnglkibooebeipjb)
+
+</td>
+<td width="50%" valign="top">
+
+### [Kong Identity Workflow Builder](https://github.com/bcollard/kong-identity-workflow-builder) · [website](https://kong.runlocal.dev/identity-paths/)
+
+Wizard that turns "who calls, with which credential, against which IdP" into a
+Kong identity blueprint: the consumer groups you actually need, plugins, an
+animated sequence diagram, and decK / Konnect API / Terraform snippets. Paths
+run end to end in a lab are badged as validated.
+
+`HTML` · single page · shareable scenario links
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [keycloak-cloudrun](https://github.com/bcollard/keycloak-cloudrun)
+
+Keycloak 26 on Google Cloud Run, in Terraform: Cloud SQL Postgres on a private IP,
+a global load balancer whose URL map exposes only the public paths and gates
+`/admin` behind a header. Built so a lab IdP **survives cluster resets**: wipe
+every kind cluster and the realms, clients and users are still there.
+
+`HCL` · Cloud Run · Cloud SQL · cosign-signed image on `ghcr.io`
+
+</td>
+<td width="50%" valign="top">
+</td>
+</tr>
 </table>
 
 ---
@@ -112,15 +153,16 @@ manage the kind clusters it creates without dropping into a terminal.
 |---|---|---|
 | **[keycloak-cli](https://github.com/bcollard/keycloak-cli)** | Manage Keycloak realms, clients, users, groups and OAuth scopes from the terminal. No Docker, no Java, no `kcadm.sh` in a pod. | `Go` |
 | **[homepki](https://github.com/bcollard/homepki)** · [website](https://bcollard.github.io/homepki/) | Your own three-tier PKI for home labs — root CA, intermediates, server & client certs. mTLS labs in four commands. | `Go` |
-| **[push-to-cdn](https://github.com/bcollard/push-to-cdn)** | Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets. | `Go` |
+| **[push-to-cdn](https://github.com/bcollard/push-to-cdn)** · [website](https://bcollard.github.io/push-to-cdn/) | Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets. | `Go` |
 | **[svg2drawio](https://github.com/bcollard/svg2drawio)** · [website](https://svg2drawio.runlocal.dev) | Turn an SVG into a real draw.io diagram — every element becomes a native mxGraph cell you can move, restyle and edit, not an embedded image. | `Go` |
+| **[jwks-bridge](https://github.com/bcollard/jwt-signer-vault-jwks-bridge)** · [website](https://bcollard.github.io/jwt-signer-vault-jwks-bridge/) | Serves Vault-stored signing keys to Kong's `jwt-signer` plugin and a public JWKS to backends, so every hybrid-mode or Konnect data plane signs with the same key. Staged rotation, stale-if-error. | `Go` |
 | **[kuma-migrator](https://github.com/Kong/kuma-migrator)** · [website](https://kong.github.io/kuma-migrator/) | Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14. | `Go` |
 | **[Claude Status](https://github.com/bcollard/claude-status-macos-menu-bar)** · [website](https://claudestatus.runlocal.dev/) | macOS menu-bar app for Claude Code usage: live plan limits, today's spend, weekly cap, per-model breakdown. ~1.5k lines of Swift, no Electron. | `Swift` |
 | **[slack-clauded-status-updater](https://github.com/bcollard/slack-clauded-status-updater)** | Rotates your Slack status with Claude Code "thinking mode" words on a schedule. Cloud Function + Scheduler + Terraform, because why not. | `Go · HCL` |
 <!-- profile:end:toolbelt -->
 
 <!-- profile:begin:taps -->
-Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator) · [`bcollard/marina`](https://github.com/bcollard/homebrew-marina) · [`bcollard/pastiche`](https://github.com/bcollard/homebrew-pastiche) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn) · [`bcollard/svg2drawio`](https://github.com/bcollard/homebrew-svg2drawio)
+Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-status) · [`bcollard/homepki`](https://github.com/bcollard/homebrew-homepki) · [`bcollard/jwks-bridge`](https://github.com/bcollard/homebrew-jwks-bridge) · [`bcollard/keycloak-cli`](https://github.com/bcollard/homebrew-keycloak-cli) · [`bcollard/kuma-migrator`](https://github.com/bcollard/homebrew-kuma-migrator) · [`bcollard/marina`](https://github.com/bcollard/homebrew-marina) · [`bcollard/pastiche`](https://github.com/bcollard/homebrew-pastiche) · [`bcollard/push-to-cdn`](https://github.com/bcollard/homebrew-push-to-cdn) · [`bcollard/svg2drawio`](https://github.com/bcollard/homebrew-svg2drawio)
 <!-- profile:end:taps -->
 
 ---
@@ -130,9 +172,7 @@ Taps: [`bcollard/claude-status`](https://github.com/bcollard/homebrew-claude-sta
 Where I send patches when the tool I depend on is missing a piece:
 
 <!-- profile:begin:upstream -->
-- **[containerd/containerd](https://github.com/containerd/containerd)** — `cri`: honour the platform configured in `runtime_platforms`
 - **[lima-vm/lima](https://github.com/lima-vm/lima)** — stop identifying additional disks by filesystem label
-- **[gnachman/iTerm2](https://github.com/gnachman/iTerm2)** — two-row tab bar
 - **[Kong/charts](https://github.com/Kong/charts)** — `Service.spec.trafficDistribution` support for zone-aware routing
 - **[kgateway-dev/kgateway](https://github.com/kgateway-dev/kgateway)** (ex-Gloo Edge) — ~28 merged PRs: production-readiness guides, zero-downtime gateway rollouts, NLB/TLS termination, timeouts, dynamic forward proxy
 - **[Kong/ai-deck-converter](https://github.com/Kong/ai-deck-converter)** · **[mccutchen/go-httpbin](https://github.com/mccutchen/go-httpbin)** · **[kumahq/kuma-demo](https://github.com/kumahq/kuma-demo)** · **[kumahq/kuma-website](https://github.com/kumahq/kuma-website)** · **[gohugoio/hugo](https://github.com/gohugoio/hugo)** · **[giraffi/fluent-plugin-amqp](https://github.com/giraffi/fluent-plugin-amqp)**
@@ -189,11 +229,11 @@ Where I send patches when the tool I depend on is missing a piece:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
-    <img alt="746 contributions and 642 commits in the last 12 months, 99 merged pull requests across 23 upstream repositories, 51 public repositories, 54 stars earned" height="180" src="assets/stats-light.svg">
+    <img alt="1,152 contributions and 629 commits in the last 12 months, 157 merged pull requests across 23 upstream repositories, 58 public repositories, 70 stars earned" height="180" src="assets/stats-light.svg">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
-    <img alt="Language breakdown by bytes across public repositories: Go 39.1%, Swift 20.6%, TypeScript 14.9%, Shell 5.7%, HTML 5.2%, JavaScript 4.7%, CSS 3.4%, Makefile 2.5%" height="180" src="assets/languages-light.svg">
+    <img alt="Language breakdown by bytes across public repositories: Go 38.3%, Swift 17.3%, TypeScript 13.5%, HTML 9.3%, JavaScript 7.9%, Shell 5.0%, Python 2.7%, CSS 2.6%" height="180" src="assets/languages-light.svg">
   </picture>
 </p>
 
