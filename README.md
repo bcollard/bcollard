@@ -129,7 +129,7 @@ run end to end in a lab are badged as validated.
 <tr>
 <td width="50%" valign="top">
 
-### [keycloak-cloudrun](https://github.com/bcollard/keycloak-cloudrun)
+### [keycloak-cloudrun](https://github.com/bcollard/keycloak-cloudrun) · [website](https://bcollard.github.io/keycloak-cloudrun/)
 
 Keycloak 26 on Google Cloud Run, in Terraform: Cloud SQL Postgres on a private IP,
 a global load balancer whose URL map exposes only the public paths and gates
