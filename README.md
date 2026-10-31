@@ -41,88 +41,12 @@ Colima or Rancher Desktop.
 </td>
 <td width="50%" valign="top">
 
-### [porthole](https://github.com/bcollard/porthole) · [website](https://porthole.runlocal.dev/)
-
-Web-based debug terminal for Kubernetes, **designed for devs, not ops**. Pick a
-pod, inject an ephemeral container (`netshoot`, `psql`, …), attach from the
-browser. Pluggable OIDC authN and OPA authZ, audit logs, auto-sweep — so
-developers reach pods without `kubectl` and without the cluster knowing their
-corporate identity.
-
-`Go` · Helm chart on `ghcr.io`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [headsmith](https://github.com/bcollard/headsmith) · [website](https://bcollard.github.io/headsmith/)
-
-HTTP header editor for Chrome, built on `declarativeNetRequest` **and nothing
-else** — there is no code path that *could* see your traffic, because none of the
-extension's code runs when a request is made. `webRequest` is on a hard-fail list
-in CI so it can't be added quietly.
-
-`TypeScript` · WXT · reproducible builds + [build provenance](https://docs.github.com/actions/security-for-github-actions/using-artifact-attestations)
-
-</td>
-<td width="50%" valign="top">
-
-### [Advanced Bookmarks](https://github.com/bcollard/chrome-advanced-bookmarks) · [website](https://bcollard.github.io/chrome-advanced-bookmarks/)
-
-Replaces Chrome's bookmark dialog with a fuzzy-searchable folder picker. Type
-three letters, land in any nested folder. Every release is byte-reproducible and
-attested — `gh attestation verify` the zip you installed.
-
-`JavaScript` · reproducible builds · [Chrome Web Store](https://chromewebstore.google.com/detail/advanced-bookmarks/lllhlboikkambnobbpjifhkpckiigdio)
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [Pastiche](https://github.com/bcollard/pastiche) · [website](https://pastiche.runlocal.dev/)
-
-Keyboard-first clipboard manager for macOS, living in the menu bar. Text and
-image history with inline previews, type filters and instant search — and
-**nothing leaves the Mac**.
-
-`Swift` · SwiftUI · `brew install --cask bcollard/pastiche/pastiche`
-
-</td>
-<td width="50%" valign="top">
-
 ### [marina-ui](https://github.com/bcollard/marina-ui) · [website](https://marina.run)
 
 Menu-bar companion to the [`marina`](https://github.com/bcollard/marina) CLI —
 manage the kind clusters it creates without dropping into a terminal.
 
 `Swift` · SwiftUI · `brew install --cask bcollard/marina/marina-ui`
-
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-### [Pagesmith](https://github.com/bcollard/pagesmith) · [website](https://bcollard.github.io/pagesmith/)
-
-Full-page screenshots for Chrome, as one image or PDF. Handles sticky headers,
-lazy-loaded content and apps that scroll an inner panel. **No network code in
-the shipped bundle** — CI checks the built output and fails if a `fetch` appears.
-
-`TypeScript` · `activeTab` only · [Chrome Web Store](https://chromewebstore.google.com/detail/nclcaennencgjadomnglkibooebeipjb)
-
-</td>
-<td width="50%" valign="top">
-
-### [Kong Identity Workflow Builder](https://github.com/bcollard/kong-identity-workflow-builder) · [website](https://kong.runlocal.dev/identity-paths/)
-
-Wizard that turns "who calls, with which credential, against which IdP" into a
-Kong identity blueprint: the consumer groups you actually need, plugins, an
-animated sequence diagram, and decK / Konnect API / Terraform snippets. Paths
-run end to end in a lab are badged as validated.
-
-`HTML` · single page · shareable scenario links
 
 </td>
 </tr>
@@ -140,6 +64,65 @@ every kind cluster and the realms, clients and users are still there.
 
 </td>
 <td width="50%" valign="top">
+
+### [keycloak-cli](https://github.com/bcollard/keycloak-cli)
+
+`kc` manages Keycloak realms, clients, users, groups and OAuth scopes from the
+terminal. **No Docker, no Java, no `kcadm.sh` in a pod** — a single static
+binary that talks to the Admin REST API over HTTPS.
+
+`Go` · single binary · `brew install --cask bcollard/keycloak-cli/keycloak-cli`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [Claude Status](https://github.com/bcollard/claude-status-macos-menu-bar) · [website](https://claudestatus.runlocal.dev/)
+
+Claude Code usage in the macOS menu bar: live plan limits, today's spend, weekly
+cap, per-model breakdown. Reuses the Claude Code login from the Keychain and
+reads token counts from local logs — **no new account, no API key**.
+
+`Swift` · SwiftUI · ~1.5k lines, no Electron · `brew install --cask bcollard/claude-status/claude-status`
+
+</td>
+<td width="50%" valign="top">
+
+### [Pastiche](https://github.com/bcollard/pastiche) · [website](https://pastiche.runlocal.dev/)
+
+Keyboard-first clipboard manager for macOS, living in the menu bar. Text and
+image history with inline previews, type filters and instant search — and
+**nothing leaves the Mac**.
+
+`Swift` · SwiftUI · `brew install --cask bcollard/pastiche/pastiche`
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### [porthole](https://github.com/bcollard/porthole) · [website](https://porthole.runlocal.dev/)
+
+Web-based debug terminal for Kubernetes, **designed for devs, not ops**. Pick a
+pod, inject an ephemeral container (`netshoot`, `psql`, …), attach from the
+browser. Pluggable OIDC authN and OPA authZ, audit logs, auto-sweep — so
+developers reach pods without `kubectl` and without the cluster knowing their
+corporate identity.
+
+`Go` · Helm chart on `ghcr.io`
+
+</td>
+<td width="50%" valign="top">
+
+### [homepki](https://github.com/bcollard/homepki) · [website](https://bcollard.github.io/homepki/)
+
+Your own three-tier PKI for local labs — root CA, intermediates, server and
+client certificates, and trust-store install on macOS and Linux. mTLS labs in
+four commands, **no `openssl` required**: everything goes through Go's `crypto/x509`.
+
+`Go` · single binary · `brew install --cask bcollard/homepki/homepki`
+
 </td>
 </tr>
 </table>
@@ -151,13 +134,10 @@ every kind cluster and the realms, clients and users are still there.
 <!-- profile:begin:toolbelt -->
 | | | |
 |---|---|---|
-| **[keycloak-cli](https://github.com/bcollard/keycloak-cli)** | Manage Keycloak realms, clients, users, groups and OAuth scopes from the terminal. No Docker, no Java, no `kcadm.sh` in a pod. | `Go` |
-| **[homepki](https://github.com/bcollard/homepki)** · [website](https://bcollard.github.io/homepki/) | Your own three-tier PKI for home labs — root CA, intermediates, server & client certs. mTLS labs in four commands. | `Go` |
 | **[push-to-cdn](https://github.com/bcollard/push-to-cdn)** · [website](https://bcollard.github.io/push-to-cdn/) | Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets. | `Go` |
 | **[svg2drawio](https://github.com/bcollard/svg2drawio)** · [website](https://svg2drawio.runlocal.dev) | Turn an SVG into a real draw.io diagram — every element becomes a native mxGraph cell you can move, restyle and edit, not an embedded image. | `Go` |
 | **[jwks-bridge](https://github.com/bcollard/jwt-signer-vault-jwks-bridge)** · [website](https://bcollard.github.io/jwt-signer-vault-jwks-bridge/) | Serves Vault-stored signing keys to Kong's `jwt-signer` plugin and a public JWKS to backends, so every hybrid-mode or Konnect data plane signs with the same key. Staged rotation, stale-if-error. | `Go` |
 | **[kuma-migrator](https://github.com/Kong/kuma-migrator)** · [website](https://kong.github.io/kuma-migrator/) | Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14. | `Go` |
-| **[Claude Status](https://github.com/bcollard/claude-status-macos-menu-bar)** · [website](https://claudestatus.runlocal.dev/) | macOS menu-bar app for Claude Code usage: live plan limits, today's spend, weekly cap, per-model breakdown. ~1.5k lines of Swift, no Electron. | `Swift` |
 | **[slack-clauded-status-updater](https://github.com/bcollard/slack-clauded-status-updater)** | Rotates your Slack status with Claude Code "thinking mode" words on a schedule. Cloud Function + Scheduler + Terraform, because why not. | `Go · HCL` |
 <!-- profile:end:toolbelt -->
 
@@ -229,11 +209,11 @@ Where I send patches when the tool I depend on is missing a piece:
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
-    <img alt="1,152 contributions and 629 commits in the last 12 months, 157 merged pull requests across 23 upstream repositories, 58 public repositories, 70 stars earned" height="180" src="assets/stats-light.svg">
+    <img alt="1,157 contributions and 687 commits in the last 12 months, 157 merged pull requests across 23 upstream repositories, 59 public repositories, 71 stars earned" height="180" src="assets/stats-light.svg">
   </picture>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/languages-dark.svg">
-    <img alt="Language breakdown by bytes across public repositories: Go 38.3%, Swift 17.3%, TypeScript 13.5%, HTML 9.3%, JavaScript 7.9%, Shell 5.0%, Python 2.7%, CSS 2.6%" height="180" src="assets/languages-light.svg">
+    <img alt="Language breakdown by bytes across public repositories: Go 37.9%, Swift 17.2%, TypeScript 13.4%, HTML 9.2%, JavaScript 7.8%, Shell 4.9%, Python 2.9%, CSS 2.6%" height="180" src="assets/languages-light.svg">
   </picture>
 </p>
 

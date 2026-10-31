@@ -5,16 +5,16 @@
         fill="#1f2328">@bcollard</text>
   <text x="420" y="34" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11"
         fill="#59636e" text-anchor="end">commits &amp; contributions: last 12 months</text>
-  <text x="20" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">1 152</text>
+  <text x="20" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">1 157</text>
   <text x="20" y="105" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">contributions</text>
-  <text x="157" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">629</text>
+  <text x="157" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">687</text>
   <text x="157" y="105" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">commits</text>
   <text x="294" y="88" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">157</text>
   <text x="294" y="105" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">merged PRs</text>
   <text x="20" y="142" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">23</text>
   <text x="20" y="159" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">upstream repos</text>
-  <text x="157" y="142" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">58</text>
+  <text x="157" y="142" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">59</text>
   <text x="157" y="159" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">public repos</text>
-  <text x="294" y="142" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">70</text>
+  <text x="294" y="142" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="22" font-weight="600" fill="#1f2328">71</text>
   <text x="294" y="159" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11" fill="#59636e">stars earned</text>
 </svg>

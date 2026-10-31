@@ -13,10 +13,8 @@
 # so it can flag drift (renames, archival, a new repo that outgrew the list).
 # ---------------------------------------------------------------------------
 featured = [
-  "marina", "marina-ui", "porthole", "headsmith",
-  "chrome-advanced-bookmarks", "pastiche",
-  "pagesmith", "kong-identity-workflow-builder",
-  "keycloak-cloudrun",
+  "marina", "marina-ui", "keycloak-cloudrun", "keycloak-cli",
+  "claude-status-macos-menu-bar", "pastiche", "porthole", "homepki",
 ]
 
 [github]
@@ -51,14 +49,6 @@ skip = ["img.shields.io"]
 # `site` is optional. `blurb` is markdown.
 # ---------------------------------------------------------------------------
 [[toolbelt]]
-repo = "bcollard/keycloak-cli"
-blurb = "Manage Keycloak realms, clients, users, groups and OAuth scopes from the terminal. No Docker, no Java, no `kcadm.sh` in a pod."
-
-[[toolbelt]]
-repo = "bcollard/homepki"
-blurb = "Your own three-tier PKI for home labs — root CA, intermediates, server & client certs. mTLS labs in four commands."
-
-[[toolbelt]]
 repo = "bcollard/push-to-cdn"
 blurb = "Drop a file in a GCS bucket, get a public URL back. For workshops, demos and long-lived assets."
 
@@ -74,12 +64,6 @@ blurb = "Serves Vault-stored signing keys to Kong's `jwt-signer` plugin and a pu
 [[toolbelt]]
 repo = "Kong/kuma-migrator"
 blurb = "Migrates Kuma / Kong Mesh users from `kuma.io/service` to the MeshService API, with deprecation scans for Kuma 2.11–2.14."
-
-[[toolbelt]]
-repo = "bcollard/claude-status-macos-menu-bar"
-name = "Claude Status"
-site = "https://claudestatus.runlocal.dev/"
-blurb = "macOS menu-bar app for Claude Code usage: live plan limits, today's spend, weekly cap, per-model breakdown. ~1.5k lines of Swift, no Electron."
 
 [[toolbelt]]
 repo = "bcollard/slack-clauded-status-updater"
